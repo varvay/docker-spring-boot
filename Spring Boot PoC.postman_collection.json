@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "d304a2cf-598f-4073-ad12-9f37943b8206",
+		"name": "Spring Boot PoC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11245674",
+		"_collection_link": "https://gold-water-109489.postman.co/workspace/personal~7daf2014-939a-47df-9153-b8cc3bc407f6/collection/11245674-d304a2cf-598f-4073-ad12-9f37943b8206?action=share&creator=11245674&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Full API Testing -  BE",
+			"item": [
+				{
+					"name": "/key-exchange",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"encClientPubKey\": \"0a63d3b6e2091b4f8972fec9c57bfb9ff8842a2b77bf62ac7a9b7f6a0258401e\",\n    \"encClientPrivKey\": \"f08030de7642b67d26f5497bc8557e100cff9cca63235ff8b22d857105de6a7d\",\n    \"signClientPubKey\": \"46dc60903d1e4cd0859ef987b141c57402cbea4c7da92c35159ec70092130c98\",\n    \"signClientPrivKey\": \"0205ced28221cdceca1b2fc997d15aaa4bc27c2ebccc33c45c59a0becc430f59\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/key-exchange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"key-exchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-sign-enc",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plaintext\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mobile-sign-enc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mobile-sign-enc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/dec-verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nonce\": \"ad1943470076de24142e65e9\",\n    \"ciphertext\": \"95d19a82595abfc644729c419519d5cf35608a685aa4d3d0f81883d3b6aed99ab31230248e05377f35dea94e93b907fbf538b0b5997ac3d32e4effe7ea17054bb02960783ce985cdc28990242a8b187a56f9cff852a25de4ada1e8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dec-verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dec-verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sign-enc",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plaintext\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sign-enc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sign-enc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-dec-verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nonce\": \"488b3b5bc7ba7517d9e0096c\",\n    \"ciphertext\": \"b9fdcbbc97a1bf3805e1848ae3e1f50c8f386d9f0355ecca6c795296e638fb1b4a8d1f1f100c7f7a509cf72970cd74c3ad736ea6d8cc10fd018a8e8ec18a4446e3533bdae12cbfb001e1d8ed070b3bbb190719278abc2726c4c214\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mobile-dec-verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mobile-dec-verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mobile Testing - FE",
+			"item": [
+				{
+					"name": "/key-exchange",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"encClientPubKey\": \"0a63d3b6e2091b4f8972fec9c57bfb9ff8842a2b77bf62ac7a9b7f6a0258401e\",\n    \"encClientPrivKey\": \"f08030de7642b67d26f5497bc8557e100cff9cca63235ff8b22d857105de6a7d\",\n    \"signClientPubKey\": \"46dc60903d1e4cd0859ef987b141c57402cbea4c7da92c35159ec70092130c98\",\n    \"signClientPrivKey\": \"0205ced28221cdceca1b2fc997d15aaa4bc27c2ebccc33c45c59a0becc430f59\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/key-exchange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"key-exchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-sign-enc",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plaintext\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mobile-sign-enc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mobile-sign-enc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/enc-trx",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nonce\": \"f808e742573cfa27c20dcc95\",\n    \"ciphertext\": \"4b4af57163d90ca7618eea6e2416e5b2a80839aec403d659ae2da3899c3429eaa00f20901d357b679bea5c8cb7385d36bc2d6206f7269487a833b28247c6ae66fd5feba8c1769b72d8897fb2f15b17685deb3d9d7c2b00410ab81e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/enc-trx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"enc-trx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-dec-verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-ID",
+								"value": "wasabi-man",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nonce\": \"68a9bb15044a0823ae2d6d28\",\n    \"ciphertext\": \"56b2ab90ff8f76d2810249c2bcc9cf8b0929c5a4b2ae0c95993c6770504c6d9909489613591cb8b58ad7d471835b7991abbfe8ad5b1d5639a03d38cf3baf6b406f9b930f730edfa0d446ed8a93e25c0a1143c331c1a6c5e6ff706b8e1bcf3258990dfe430fbbab6f2ce60fe3f1f18af404\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mobile-dec-verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mobile-dec-verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
